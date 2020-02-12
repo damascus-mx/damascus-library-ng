@@ -18,16 +18,27 @@
         right: 0;
         left: 0;
         .mat-toolbar {
-            #company {
-                font-family: 'Poppins', sans-serif;
-            }
+            padding: 8px 0;
+            .logo {
+                display: flex;
+                display: -webkit-flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: center;
+                font-size: large;
 
-            #title {
-                font-family: 'Poppins', sans-serif;
-                text-decoration: none;
-                margin-left: 4px;
-                color: inherit;
-                cursor: pointer;
+                #company {
+                    font-family: 'Poppins', sans-serif;
+                }
+    
+                #title {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 700;
+                    text-decoration: none;
+                    margin-left: 4px;
+                    color: inherit;
+                    cursor: pointer;
+                }
             }
         }
 

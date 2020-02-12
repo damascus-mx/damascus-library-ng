@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { BookService } from 'src/app/core/domain/service/book.service';
 import { takeUntil } from 'rxjs/operators';
 import { Book } from 'src/app/core/domain/model/book.model';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, PageEvent } from '@angular/material';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +16,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   // UI
   isLoading = true;
   gotError = false;
+  // MatPaginator Inputs
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  // MatPaginator Output
+  pageEvent: PageEvent;
   // RxJS
   private subject$ = new Subject<void>();
 
@@ -49,6 +56,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.snackbar.open('This book doesn\'t has any URL resource attached', 'DISMISS', {
       duration: 5000
     });
+  }
+
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    if (setPageSizeOptionsInput) {
+      this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+    }
   }
 
 }

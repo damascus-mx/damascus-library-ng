@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home.component';
-import { MatChipsModule, MatIconModule, MatSnackBarModule } from '@angular/material';
+import { MatChipsModule, MatIconModule, MatSnackBarModule,
+  MatProgressBarModule, MatButtonModule, MatPaginatorModule } from '@angular/material';
 
 
 @NgModule({
@@ -13,7 +14,10 @@ import { MatChipsModule, MatIconModule, MatSnackBarModule } from '@angular/mater
     HomeRoutingModule,
     MatChipsModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatProgressBarModule
   ],
   providers: []
 })

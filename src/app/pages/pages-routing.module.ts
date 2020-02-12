@@ -13,13 +13,12 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
       {
-        path: '404',
+        path: '**',
         loadChildren: () => import('../shared/not-found/not-found.module').then(m => m.NotFoundModule)
       },
       {
         path: '**',
-        redirectTo: '404',
-        pathMatch: 'full'
+        redirectTo: '404'
       }
     ]
   }

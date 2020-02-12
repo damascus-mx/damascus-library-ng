@@ -2,7 +2,7 @@
 @include mat-core();
 
 $grey: mat-color(mat-palette($mat-grey, A400));
-$skel: mat-color(mat-palette($mat-grey, 100));
+$skel: mat-color(mat-palette($mat-grey, 200));
 
 .container {
     display: flex;
@@ -31,20 +31,23 @@ $skel: mat-color(mat-palette($mat-grey, 100));
 
             justify-content: center;
             align-items: center;
-            flex-flow: row wrap;
+            flex-flow: row wrap-reverse;
 
             font-family: 'Poppins', sans-serif;
+            font-weight: 700;
 
             border-radius: 8px;
-            background-color: #6200ea;
+            background-color: #212121;
             height: 300px;
             width: 90%;
             max-width: 1080px;
             margin: 36px 0;
 
+            background-image: url('src/assets/img/topography.svg');
+
             span {
                 text-align: center;
-                font-size: x-large;
+                font-size: larger;
             }
 
             img {
@@ -58,7 +61,7 @@ $skel: mat-color(mat-palette($mat-grey, 100));
                 flex-flow: column;
                 color: #fff;
                 img {
-                    height: 24px;
+                    height: 36px;
                     width: auto;
                 }
             }
@@ -66,6 +69,15 @@ $skel: mat-color(mat-palette($mat-grey, 100));
     }
 
     .headline {
+        width: 90%;
+        max-width: 1080px;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: flex-start;
+        align-self: center;
+    }
+
+    .loader-container {
         width: 90%;
         max-width: 1080px;
         display: flex;
@@ -83,13 +95,14 @@ $skel: mat-color(mat-palette($mat-grey, 100));
 
         flex-flow: row wrap;
 
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: flex-start;
+        width: 90%;
         max-width: 1080px;
         align-self: center;
 
         .book {
-            margin: 16px;
+            margin: 16px 32px 16px 0px;
             max-width: 300px;
             display: flex;
             display: -webkit-flex;
@@ -101,8 +114,24 @@ $skel: mat-color(mat-palette($mat-grey, 100));
                 height: 250px;
                 width: 300px;
                 max-width: inherit;
-                background-color: $accent;
+                background-color: $skel;
                 border-radius: 8px;
+                display: flex;
+                display: -webkit-flex;
+                flex-flow: column;
+                align-items: flex-end;
+
+                background-image: url('src/assets/img/wiggle.svg');
+
+                img {
+                    image-rendering: optimizeQuality;
+                    height: 80%;
+                    width: auto;
+                }
+
+                .actions {
+                    margin: 8px;
+                }
             }
 
             .content {
@@ -150,5 +179,31 @@ $skel: mat-color(mat-palette($mat-grey, 100));
                 }
             }
         }
+    }
+
+    .paginator {
+        width: 90%;
+        max-width: 1080px;
+
+        .mat-paginator {
+            background: transparent;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .book-container {
+        width: 100%;
+        justify-content: center !important;
+
+        .book {
+            margin: 16px !important;
+        }
+    }
+
+    .paginator {
+        width: 100%;
     }
 }

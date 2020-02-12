@@ -1,0 +1,33 @@
+.wrapper {
+    width: 100%;
+
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    .resource {
+        width: inherit;
+        max-width: 50%;
+        img {
+            width: inherit;
+            height: auto;
+        }
+    }
+
+    .content {
+        max-width: 50%;
+        
+        * {
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .resource {
+        max-width: inherit !important;
+    }
+}

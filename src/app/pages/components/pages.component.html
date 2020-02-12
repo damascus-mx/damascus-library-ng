@@ -2,8 +2,10 @@
     <div class="toolbar">
         <mat-toolbar color="primary">
             <mat-toolbar-row>
-                <img src="assets/img/branding/damascus_white.svg" alt="damascus logo" height="24" width="24">
-                <a id="title" routerLink="/">Library</a>
+                <div class="logo" routerLink="/">
+                    <img src="assets/img/branding/damascus_white.svg" alt="damascus logo" height="24" width="24">
+                    <span id="title">damascus <span style="font-weight: 400 !important;">Library</span></span>
+                </div>
                 <span class="spacer-x"></span>
                 <button mat-icon-button><mat-icon>search</mat-icon></button>
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Main menu">
@@ -21,15 +23,17 @@
             </mat-toolbar-row>
         </mat-toolbar>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <mat-icon>dialpad</mat-icon>
-              <span>Redial</span>
-            </button>
+            <div mat-menu-item>
+              <mat-icon>brightness_4</mat-icon>
+              <span>Dark Mode</span>
+              <span class="spacer-x"></span>
+              <mat-slide-toggle color="accent"></mat-slide-toggle>
+            </div>
             <button mat-menu-item disabled>
               <mat-icon>voicemail</mat-icon>
               <span>Check voice mail</span>
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item routerLink="etc">
               <mat-icon>notifications_off</mat-icon>
               <span>Disable alerts</span>
             </button>
