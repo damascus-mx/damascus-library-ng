@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles/scss/library-theme.scss",
+              "src/assets/styles/scss/styles.scss"
             ],
             "scripts": []
           },
@@ -93,7 +94,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles/scss/library-theme.scss",
+              "src/assets/styles/scss/styles.scss"
             ],
             "scripts": []
           }
@@ -124,6 +126,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "damascus-library-ng"
 }

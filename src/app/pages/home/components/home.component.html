@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="swiper-container">
+        <div class="swiper">
+            <img src="assets/img/books.png" alt="Books illustration">
+            <div class="subtitle">
+                <img src="assets/img/branding/damascus_white.svg" alt="damascus logo" height="24" height="24">
+                <span>Explore new ways to read.</span>
+            </div>
+        </div>
+    </div>
+    <div class="headline">
+        <h2 style="margin: 0;">Available lectures</h2>
+    </div>
+    <ng-container *ngIf="isLoading; else bookContainer">
+        <div class="loader-container">
+            <p>Loading ...</p>
+        </div>
+    </ng-container>
+    <ng-template #bookContainer>
+        <div class="book-container">
+            <div class="book" *ngFor="let book of books" (click)="openBookTab(book.s3Url)">
+                <div class="cover">
+                </div>
+                <div class="content">
+                    <span class="type">Book</span>
+                    <span class="title">{{book.name}}</span>
+                    <span class="description">
+                        Book written by <b *ngFor="let author of book.authors"><i>{{author}} </i> </b>.
+                    </span>
+                    <span class="date">
+                        <mat-icon>schedule</mat-icon>
+                        <span class="published">{{book.createdAt * 1000 | date:'MMM d, y • h:mm a'}}</span>
+                    </span>
+                    <div class="category" *ngIf="book.categories != null && book.categories.length > 1">
+                        <mat-chip-list>
+                            <mat-chip *ngFor="let category of book.categories" >
+                                {{category}}
+                            </mat-chip>
+                        </mat-chip-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>
