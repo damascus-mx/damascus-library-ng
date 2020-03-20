@@ -1,13 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { BookService } from 'src/app/core/domain/service/book.service';
+import { BookService } from 'src/app/core/service/book.service';
 import { takeUntil } from 'rxjs/operators';
 import { Book } from 'src/app/core/domain/model/book.model';
 import { MatSnackBar } from '@angular/material';
-import { BookLogUsecase } from 'src/app/core/usecase/booklog.usecase';
 import { BookLog } from 'src/app/core/domain/model/booklog.model';
-import { BookLogRepositoryImp } from 'src/app/core/infrastructure/persistence/cache/booklog.repository';
-import { error } from 'protractor';
+import { BookLogService } from 'src/app/core/service/book-log.service';
 
 @Component({
   selector: 'app-home',
@@ -21,20 +19,20 @@ export class HomeComponent implements OnInit, OnDestroy {
   // UI
   isLoading = true;
   gotError = false;
-  // Usecases
-  private bookLogUsecase: BookLogUsecase;
+  // Services
+  private bookLogService: BookLogService;
   // RxJS
   private subject$ = new Subject<void>();
 
-  constructor(private bookService: BookService, private snackbar: MatSnackBar) {
-    // Start isolated DI Container and inject dependencies
-    this.bookLogUsecase = new BookLogUsecase(new BookLogRepositoryImp());
-    this.booksCached$ = this.bookLogUsecase.getLogs();
+  constructor(private bookService: BookService, private snackbar: MatSnackBar, private _bookLogService: BookLogService) {
+    this.bookLogService = _bookLogService;
+    this.booksCached$ = this.bookLogService.getLogs();
 
     // Get books
     this.books$ = this.bookService.getBooks();
     this.bookService.getBooks().pipe(takeUntil(this.subject$)).subscribe((booksRemote: Array<Book>) => {
       // this.books = booksRemote;
+      console.log(booksRemote);
     }, (err: Error) => {
       this.isLoading = false;
       this.gotError = true;
@@ -55,8 +53,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onDeleteLogs(): void {
     try {
-      this.bookLogUsecase.removeAll();
-      this.booksCached$ = this.bookLogUsecase.getLogs();
+      this.bookLogService.removeAll();
+      this.booksCached$ = this.bookLogService.getLogs();
     } catch (error) {
       this.snackbar.open('Failed to complete task', 'DISMISS');
     }

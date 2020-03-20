@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Book } from 'src/app/core/domain/model/book.model';
 import { NewBookLog, BookLog } from 'src/app/core/domain/model/booklog.model';
-import { BookLogUsecase } from 'src/app/core/usecase/booklog.usecase';
-import { BookLogRepositoryImp } from 'src/app/core/infrastructure/persistence/cache/booklog.repository';
 import { MatSnackBar } from '@angular/material';
+import { BookLogService } from 'src/app/core/service/book-log.service';
 
 @Component({
   selector: 'app-book-card',
@@ -13,11 +12,10 @@ import { MatSnackBar } from '@angular/material';
 export class BookCardComponent implements OnInit {
   @Input() book: Book;
 
-  private bookLogUsecase: BookLogUsecase;
+  private bookLogUsecase: BookLogService;
 
-  constructor(private snackbar: MatSnackBar) {
-    // Manual DI, inject dependencies
-    this.bookLogUsecase = new BookLogUsecase(new BookLogRepositoryImp());
+  constructor(private snackbar: MatSnackBar, private bookLogService: BookLogService) {
+    this.bookLogUsecase = bookLogService;
   }
 
   ngOnInit() {

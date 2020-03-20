@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
-import { REMOTE_CONFIG } from '../../common/remote.config';
-import { Book } from '../model/book.model';
+import { REMOTE_CONFIG } from '../common/remote.config';
+import { Book } from '../domain/model/book.model';
 
 @Injectable({
   providedIn: 'root'

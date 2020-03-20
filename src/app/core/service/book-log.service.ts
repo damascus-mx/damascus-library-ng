@@ -1,14 +1,17 @@
-import { BookLogRepository } from '../domain/repository/booklog.repository';
-import { BookLog } from '../domain/model/booklog.model';
 import { Injectable } from '@angular/core';
+import { BookLog } from '../domain/model/booklog.model';
 import { Observable } from 'rxjs';
+import { BookLogRepositoryImp } from '../infrastructure/persistence/cache/booklog.repository';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
-export class BookLogUsecase {
+export class BookLogService {
 
-    public constructor(private repository: BookLogRepository) {
+    repository: BookLogRepositoryImp;
+
+    constructor() {
+        this.repository = new BookLogRepositoryImp();
     }
 
     saveBook(model: BookLog): Error {

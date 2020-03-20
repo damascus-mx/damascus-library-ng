@@ -1,11 +1,10 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { BookLog } from 'src/app/core/domain/model/booklog.model';
-import { BookService } from 'src/app/core/domain/service/book.service';
+import { BookService } from 'src/app/core/service/book.service';
 import { Subject } from 'rxjs';
 import { Book } from 'src/app/core/domain/model/book.model';
 import { takeUntil } from 'rxjs/operators';
-import { BookLogUsecase } from 'src/app/core/usecase/booklog.usecase';
-import { BookLogRepositoryImp } from 'src/app/core/infrastructure/persistence/cache/booklog.repository';
+import { BookLogService } from 'src/app/core/service/book-log.service';
 
 @Component({
   selector: 'app-book-log-card',
@@ -17,11 +16,11 @@ export class BookLogCardComponent implements OnInit, OnDestroy {
   // RxJS
   subject$ = new Subject<void>();
   // Usecase(s)
-  private bookLogUsecase: BookLogUsecase;
+  private bookLogUsecase: BookLogService;
 
-  constructor(private bookService: BookService) {
+  constructor(private bookService: BookService, private bookLogService: BookLogService) {
     // Init isolated DI
-    this.bookLogUsecase = new BookLogUsecase(new BookLogRepositoryImp());
+    this.bookLogUsecase = bookLogService;
   }
 
   ngOnInit() {

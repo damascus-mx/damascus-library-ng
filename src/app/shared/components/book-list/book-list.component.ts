@@ -29,7 +29,7 @@ export class BookListComponent implements OnInit, AfterViewInit {
       // mousewheel: true,
       lazy: {
         loadPrevNext: true,
-        loadPrevNextAmount: 6,
+        loadPrevNextAmount: 3,
         elementClass: 'swiper-lazy',
         loadedClass: 'swiper-lazy-loaded',
         preloaderClass: 'swiper-lazy-preloader',
