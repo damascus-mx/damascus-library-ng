@@ -23,9 +23,14 @@ export class BookListComponent implements OnInit, AfterViewInit {
     // Init swiper
     this.bookSwiper = new Swiper('.swiper-container', {
       // cssMode: true,
-      freeMode: true,
-      freeModeFluid : true,
+      observer: true,
       slidesPerView: 'auto',
+      // SET FREE MODE IF YOU WANT TO MOVE SWIPER IG STORIE'S LIKE
+      freeMode: false,
+      freeModeFluid : false,
+      resizeReInit: true,
+      preloadImages: false,
+      watchSlidesVisibility: false,
       // mousewheel: true,
       lazy: {
         loadPrevNext: true,
