@@ -12,8 +12,7 @@
         <span class="description">
             Book written by 
             <b *ngFor="let author of book.authors; index as i">
-                {{author}}
-                <ng-container *ngIf="i + 1 < book.authors.length">, </ng-container>
+                {{author}}<ng-container *ngIf="i + 1 < book.authors.length">, </ng-container>
             </b>.
         </span>
         <span class="date">
