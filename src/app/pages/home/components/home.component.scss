@@ -15,7 +15,7 @@ $skel: mat-color(mat-palette($mat-grey, 200));
     justify-content: center;
     align-items: center;
 
-    .swiper-container {
+    .banner-container {
         display: flex;
         display: -webkit-flex;
         flex-flow: column wrap;
@@ -23,13 +23,12 @@ $skel: mat-color(mat-palette($mat-grey, 200));
         align-items: center;
         width: 100%;
         max-width: 100%;
-        
 
-        .swiper {
+        .banner {
             display: flex;
             display: -webkit-flex;
 
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             flex-flow: row wrap-reverse;
 
@@ -43,11 +42,16 @@ $skel: mat-color(mat-palette($mat-grey, 200));
             max-width: 1080px;
             margin: 36px 0;
 
-            background-image: url('src/assets/img/topography.svg');
+            background: linear-gradient(
+                rgba(20,20,20, .3), 
+                rgba(20,20,20, 0)),
+                url('https://images.unsplash.com/photo-1576675049039-e0abcef5ce69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+            
+            background-size: cover;
 
             span {
                 text-align: center;
-                font-size: larger;
+                font-size: 2em;
             }
 
             img {
@@ -63,6 +67,10 @@ $skel: mat-color(mat-palette($mat-grey, 200));
                 img {
                     height: 36px;
                     width: auto;
+                }
+
+                small {
+                    font-weight: 400;
                 }
             }
         }
@@ -105,4 +113,9 @@ $skel: mat-color(mat-palette($mat-grey, 200));
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
+    .container > .banner-container > .banner{
+        span {
+            font-size: 1.3em;
+        }
+    }
 }

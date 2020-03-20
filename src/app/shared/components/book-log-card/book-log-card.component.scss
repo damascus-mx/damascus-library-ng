@@ -34,7 +34,7 @@ $skel: mat-color(mat-palette($mat-grey, 200));
             .title {
                 font-weight: 700;
                 font-size: 21px;
-                font-family: 'Playfair Display', serif;
+                font-family: 'Inter', serif;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
@@ -42,7 +42,7 @@ $skel: mat-color(mat-palette($mat-grey, 200));
             .read {
                 font-size: 10px;
                 color: $grey;
-                font-family: 'IBM Plex Sans', sans-serif;
+                font-family: 'Inter', sans-serif;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }

@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.books$ = this.bookService.getBooks();
     this.bookService.getBooks().pipe(takeUntil(this.subject$)).subscribe((booksRemote: Array<Book>) => {
       // this.books = booksRemote;
-      console.log(booksRemote);
     }, (err: Error) => {
       this.isLoading = false;
       this.gotError = true;

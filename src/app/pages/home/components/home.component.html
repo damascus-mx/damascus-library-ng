@@ -1,10 +1,9 @@
 <div class="container">
-    <div class="swiper-container">
-        <div class="swiper">
-            <img src="assets/img/books.png" alt="Books illustration">
+    <div class="banner-container">
+        <div class="banner">
             <div class="subtitle">
-                <img src="assets/img/branding/damascus_white.svg" alt="damascus logo" height="24" height="24">
-                <span>Explore new ways to <label style="color: #f50057;">read</label>.</span>
+                <small><b>damascus</b> library</small>
+                <span>Find books, podcast & more.</span>
             </div>
         </div>
     </div>
@@ -35,7 +34,7 @@
         <div class="headline">
             <h2 style="margin: 0;">Available lectures</h2>
             <span class="spacer-x"></span>
-            <button mat-button color="accent" routerLink="/book">More</button>
+            <button mat-button color="primary" routerLink="/book">More</button>
         </div>
         <ng-container *ngIf="!(books$ | async); else bookContainer">
             <div class="loader-container">

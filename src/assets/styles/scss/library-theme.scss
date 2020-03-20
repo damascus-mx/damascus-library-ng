@@ -1,15 +1,15 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$app-primary: mat-palette($mat-grey, 900);
-$app-accent:  mat-palette($mat-blue, A700, A100, A700);
+$app-primary: mat-palette($mat-indigo, A400, A100, A400);
+$app-accent:  mat-palette($mat-grey, 300);
 $app-warn:    mat-palette($mat-red, A700, A100, A700);
 $app-success: mat-palette($mat-green);
 
 $app-light-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
-$app-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+$app-dark-theme: mat-dark-theme($app-accent, $app-primary, $app-warn);
 
-@include angular-material-theme($app-light-theme);
+// @include angular-material-theme($app-light-theme);
 
 .app-light {
     @include angular-material-theme($app-light-theme);
@@ -19,8 +19,9 @@ $app-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
     @include angular-material-theme($app-dark-theme);
 }
 
+$foreground: mat-color(map-get($app-light-theme, background), app-bar);
 $primary: mat-color($app-primary);
 $accent: mat-color($app-accent);
 $warn: mat-color($app-warn);
 $success: mat-color($app-success);
-$gray: mat-color(mat-palette($mat-gray, A400));
+$grey: mat-color(mat-palette($mat-gray, 900));

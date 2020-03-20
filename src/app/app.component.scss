@@ -1,0 +1,7 @@
+@import 'src/assets/styles/scss/library-theme.scss';
+
+.root-wrapper {
+    // background-color: #fff;
+    font: inherit !important;
+    background-color: $foreground;
+}

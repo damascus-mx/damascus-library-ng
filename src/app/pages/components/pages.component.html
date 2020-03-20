@@ -1,47 +1,41 @@
 <div class="wrapper">
-    <div class="toolbar">
-        <mat-toolbar color="primary">
-            <mat-toolbar-row>
-                <div class="logo" routerLink="/">
-                    <img src="assets/img/branding/damascus_white.svg" alt="damascus logo" height="24" width="24">
-                    <span id="title">damascus <span style="font-weight: 400 !important;">Library</span></span>
-                </div>
-                <span class="spacer-x"></span>
-                <button mat-icon-button><mat-icon>search</mat-icon></button>
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Main menu">
-                    <mat-icon>more_vert</mat-icon>
-                </button>
-            </mat-toolbar-row>
-            <mat-toolbar-row class="searchbar">
-                <mat-form-field appearance="standard" color="accent">
-                    <mat-label>Search</mat-label>
-                    <input matInput [(ngModel)]="searchValue" type="text" placeholder="Search for a book, resource, etc" >
-                    <button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
-                        <mat-icon>close</mat-icon>
-                    </button>
-                </mat-form-field>
-            </mat-toolbar-row>
-        </mat-toolbar>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="book">
-                <mat-icon>menu_book</mat-icon>
-                <span>Books</span>
-            </button>
-            <button mat-menu-item disabled>
-                <mat-icon>wifi_tethering</mat-icon>
-                <span>Podcasts</span>
-            </button>
-            <button mat-menu-item disabled>
-                <mat-icon>file_copy</mat-icon>
-                <span>Docs</span>
-            </button>
-            <button mat-menu-item routerLink="settings">
-              <mat-icon>settings</mat-icon>
-              <span>Settings</span>
-            </button>
-        </mat-menu>
+    <div class="sidebar">
+        <div class="sidebar-container">
+            <img routerLink="/" src="assets/img/branding/damascus_black.png" alt="damascus" height="64" width="64" style="cursor: pointer;">
+            <div class="action-list">
+                <a class="item" mat-fab color="accent" routerLink="/" routerLinkActive="primary-overlay" [routerLinkActiveOptions]="{exact: true}"><mat-icon>dashboard</mat-icon></a>
+                <a class="item" mat-fab color="accent" routerLink="/search" routerLinkActive="primary-overlay"><mat-icon>search</mat-icon></a>
+                <a class="item" mat-fab color="accent" routerLink="/upload" routerLinkActive="primary-overlay"><mat-icon svgIcon="cloud-upload"></mat-icon></a>
+                <div class="spacer-y"></div>
+                <a class="item" mat-fab color="accent" routerLink="/settings" routerLinkActive="primary-overlay"><mat-icon>settings</mat-icon></a>
+            </div>
+        </div>
     </div>
-    <div class="container mat-app-background">
+    <mat-toolbar class="navbar">
+        <img routerLink="/" src="assets/img/branding/damascus_black.png" alt="damascus" height="48" width="48" style="cursor: pointer;">
+        <span class="spacer-x"></span>
+        <div class="action-list">
+            <a class="item" mat-mini-fab color="accent" routerLink="/search" routerLinkActive="primary-overlay" style="margin: 0 24px;"><mat-icon>search</mat-icon></a>
+            <button class="item" mat-mini-fab color="accent" [matMenuTriggerFor]="menu" aria-label="Menu button">
+                <mat-icon>expand_more</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+        </button>
+    </mat-menu>
+    <div class="container mat-app-background mat-elevation-z8">
         <router-outlet></router-outlet>
     </div>
 </div>
