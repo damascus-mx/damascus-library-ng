@@ -22,7 +22,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -32,8 +32,7 @@
               "./node_modules/swiper/css/swiper.min.css",
               "src/assets/styles/scss/styles.scss"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -48,7 +47,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -100,8 +98,7 @@
               "./node_modules/swiper/css/swiper.min.css",
               "src/assets/styles/scss/styles.scss"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -132,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "damascus-library-ng"
+  "defaultProject": "damascus-library-ng",
+  "cli": {
+    "analytics": "7f9f075a-c530-4bc6-af0e-2f9e5cdffe77"
+  }
 }
