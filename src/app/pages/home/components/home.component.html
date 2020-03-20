@@ -4,61 +4,46 @@
             <img src="assets/img/books.png" alt="Books illustration">
             <div class="subtitle">
                 <img src="assets/img/branding/damascus_white.svg" alt="damascus logo" height="24" height="24">
-                <span>Explore new ways to read.</span>
+                <span>Explore new ways to <label style="color: #f50057;">read</label>.</span>
             </div>
         </div>
     </div>
-    <div class="headline">
-        <h2 style="margin: 0;">Available lectures</h2>
-    </div>
-    <ng-container *ngIf="isLoading; else bookContainer">
-        <div class="loader-container">
-            <mat-progress-bar mode="indeterminate" aria-label="Loading"></mat-progress-bar>
+
+    <!-- Your Lectures -->
+    <section class="section-container" *ngIf="booksCached$ | async" >
+        <div class="headline">
+            <h2 style="margin: 0;">Continue were you left</h2>
+            <span class="spacer-x"></span>
+            <button mat-button color="warn" (click)="onDeleteLogs()">Delete</button>
         </div>
-    </ng-container>
-    <ng-template #bookContainer>
-        <div class="book-container">
-            <ng-container>
-                <div class="book" *ngFor="let book of books;" (click)="openBookTab(book.s3Url)">
-                    <div class="cover">
-                        <div class="actions">
-                            <button mat-mini-fab color="accent">
-                                <mat-icon>launch</mat-icon>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <span class="type">Book</span>
-                        <span class="title">{{book.name}}</span>
-                        <span class="description">
-                            Book written by 
-                            <b *ngFor="let author of book.authors; index as i">
-                                <i>{{author}}</i>
-                                <ng-container *ngIf="i + 1 < book.authors.length">, </ng-container>
-                            </b>.
-                        </span>
-                        <span class="date">
-                            <mat-icon>schedule</mat-icon>
-                            <span class="published">{{book.createdAt * 1000 | date:'MMM d, y • h:mm a'}}</span>
-                        </span>
-                        <div class="category" *ngIf="book.categories != null && book.categories.length > 1">
-                            <mat-chip-list>
-                                <mat-chip color="accent" selected *ngFor="let category of book.categories.slice(0, 3)" >
-                                    {{category}}
-                                </mat-chip>
-                            </mat-chip-list>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
-            
+        <ng-container *ngIf="isLoading; else bookLogsContainer">
+            <div class="loader-container">
+                <mat-progress-bar mode="indeterminate" aria-label="Loading"></mat-progress-bar>
+            </div>
+        </ng-container>
+        <ng-template #bookLogsContainer>
+            <div class="book-container animated fadeIn fast">
+                <ng-container *ngFor="let cachedBook$ of booksCached$ | async">
+                    <app-book-log-card [cachedBook]="cachedBook$"></app-book-log-card>
+                </ng-container>
+            </div>
+        </ng-template>
+    </section>
+
+    <!-- Available Lectures -->
+    <section class="section-container">
+        <div class="headline">
+            <h2 style="margin: 0;">Available lectures</h2>
+            <span class="spacer-x"></span>
+            <button mat-button color="accent" routerLink="/book">More</button>
         </div>
-        <div class="paginator">
-            <mat-paginator [length]="length"
-                [pageSize]="pageSize"
-                [pageSizeOptions]="pageSizeOptions"
-                (page)="pageEvent = $event">
-            </mat-paginator>
-        </div>
-    </ng-template>
+        <ng-container *ngIf="!books$ | async; else bookContainer">
+            <div class="loader-container">
+                <mat-progress-bar mode="indeterminate" aria-label="Loading"></mat-progress-bar>
+            </div>
+        </ng-container>
+        <ng-template #bookContainer>
+            <app-book-list [books]="books$ | async"></app-book-list>
+        </ng-template>
+    </section>
 </div>

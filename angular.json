@@ -29,9 +29,11 @@
             ],
             "styles": [
               "src/assets/styles/scss/library-theme.scss",
+              "./node_modules/swiper/css/swiper.min.css",
               "src/assets/styles/scss/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
@@ -95,9 +97,11 @@
             ],
             "styles": [
               "src/assets/styles/scss/library-theme.scss",
+              "./node_modules/swiper/css/swiper.min.css",
               "src/assets/styles/scss/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           }
         },
         "lint": {

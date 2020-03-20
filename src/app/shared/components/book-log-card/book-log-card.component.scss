@@ -1,0 +1,78 @@
+@import 'src/assets/styles/scss/library-theme.scss';
+@include mat-core();
+
+$grey: mat-color(mat-palette($mat-grey, A400));
+$skel: mat-color(mat-palette($mat-grey, 200));
+
+.card {
+    display: flex;
+    display: -webkit-flex;
+
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+
+    max-width: 300px;
+    max-height: 300px;
+
+    .container {
+        display: flex;
+        display: -webkit-flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+
+        .content {
+            display: flex;
+            display: -webkit-flex;
+            flex-flow: column;
+            max-width: 48%;
+            overflow: hidden;
+
+            .title {
+                font-weight: 700;
+                font-size: 21px;
+                font-family: 'Playfair Display', serif;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .read {
+                font-size: 10px;
+                color: $grey;
+                font-family: 'IBM Plex Sans', sans-serif;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .resource {
+            max-width: 48%;
+
+            .img-src {
+                height: 96px;
+                width: 96px;
+
+                background-image: url('src/assets/img/wiggle.svg');
+                background-position: center;
+            
+                background-color: $accent;
+                border-radius: 100%;
+            }
+        }
+    }
+}
+
+.mat-card {
+    border-radius: 8px;
+    box-shadow: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .card {
+        margin: 16px !important;
+    }
+}

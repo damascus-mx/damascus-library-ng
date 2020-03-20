@@ -1,0 +1,12 @@
+<div class="book-container animated fadeIn fast">
+    <!-- Swiper -->
+    <div class="swiper-container book-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let book of books">
+                <app-book-card [book]="book" ></app-book-card>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

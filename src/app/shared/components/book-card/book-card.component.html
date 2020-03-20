@@ -1,0 +1,31 @@
+<div class="book card-spacer animated fadeIn fast" (click)="openBookTab(book.s3Url, book.ID, book.name)">
+    <div class="cover">
+        <div class="actions">
+            <button mat-mini-fab color="accent">
+                <mat-icon>launch</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="content">
+        <span class="type">Book</span>
+        <span class="title">{{book.name}}</span>
+        <span class="description">
+            Book written by 
+            <b *ngFor="let author of book.authors; index as i">
+                <i>{{author}}</i>
+                <ng-container *ngIf="i + 1 < book.authors.length">, </ng-container>
+            </b>.
+        </span>
+        <span class="date">
+            <mat-icon>schedule</mat-icon>
+            <span class="published">{{book.createdAt * 1000 | date:'MMM d, y • h:mm a'}}</span>
+        </span>
+        <div class="category" *ngIf="book.categories != null && book.categories.length > 1">
+            <mat-chip-list>
+                <mat-chip color="accent" selected *ngFor="let category of book.categories.slice(0, 3)" style="overflow: hidden; max-width: 33%;" >
+                    <span style="overflow: hidden; text-overflow: ellipsis; font-size: small;">{{category}}</span>
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+</div>

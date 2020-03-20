@@ -1,0 +1,33 @@
+@import 'src/assets/styles/scss/library-theme.scss';
+@include mat-core();
+
+$grey: mat-color(mat-palette($mat-grey, A400));
+$skel: mat-color(mat-palette($mat-grey, 200));
+
+.book-container {
+    display: flex;
+    display: -webkit-flex;
+
+    width: inherit;
+    height: inherit;
+
+    flex-flow: row wrap;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    align-self: center;
+}
+
+
+.swiper-slide {
+    width: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .book-container {
+        width: 100%;
+        justify-content: center !important;
+    }
+}

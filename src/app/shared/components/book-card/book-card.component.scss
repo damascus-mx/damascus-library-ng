@@ -1,0 +1,94 @@
+@import 'src/assets/styles/scss/library-theme.scss';
+@include mat-core();
+
+$grey: mat-color(mat-palette($mat-grey, A400));
+$skel: mat-color(mat-palette($mat-grey, 200));
+
+.book {
+    max-width: 300px;
+    max-height: 450px;
+    display: flex;
+    display: -webkit-flex;
+    cursor: pointer;
+
+    flex-flow: column;
+
+    .cover {
+        height: 250px;
+        width: auto;
+        max-width: inherit;
+        background-color: $skel;
+        border-radius: 8px;
+        display: flex;
+        display: -webkit-flex;
+        flex-flow: column;
+        align-items: flex-end;
+
+        background-image: url('src/assets/img/wiggle.svg');
+
+        img {
+            image-rendering: optimizeQuality;
+            height: 80%;
+            width: auto;
+        }
+
+        .actions {
+            margin: 8px;
+        }
+    }
+
+    .content {
+        display: flex;
+        display: -webkit-flex;
+        flex-flow: column;
+        margin-top: 8px;
+        max-width: inherit;
+        overflow: hidden;
+
+        .type {
+            font-family: 'IBM Plex Sans', serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 12px;
+            color: $grey;
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            margin: 4px 0 4px;
+            font-weight: 700;
+            font-size: 24px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .date {
+            color: $grey;
+            display: flex;
+            display: -webkit-flex;
+
+            * {
+                font-size: 16px;
+            }
+
+            .published {
+                font-size: 12px;
+            }
+        }
+
+        .description {
+            font-family: 'IBM Plex Sans', serif;
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .book {
+       // margin: 16px !important;
+    }
+}

@@ -10,11 +10,11 @@ export class Book {
     public constructor(init?: Partial<Book>) {
         Object.assign(this, init);
     }
+}
 
-    public NewBook(bookName: string): Book {
-        return new Book({
-            name: bookName,
-            createdAt: Date.now()
-        });
-    }
+export function NewBook(bookName: string): Book {
+    return new Book({
+        name: bookName,
+        createdAt: Date.now()
+    });
 }

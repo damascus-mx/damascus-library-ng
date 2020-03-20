@@ -23,19 +23,21 @@
             </mat-toolbar-row>
         </mat-toolbar>
         <mat-menu #menu="matMenu">
-            <div mat-menu-item>
-              <mat-icon>brightness_4</mat-icon>
-              <span>Dark Mode</span>
-              <span class="spacer-x"></span>
-              <mat-slide-toggle color="accent"></mat-slide-toggle>
-            </div>
-            <button mat-menu-item disabled>
-              <mat-icon>voicemail</mat-icon>
-              <span>Check voice mail</span>
+            <button mat-menu-item routerLink="book">
+                <mat-icon>menu_book</mat-icon>
+                <span>Books</span>
             </button>
-            <button mat-menu-item routerLink="etc">
-              <mat-icon>notifications_off</mat-icon>
-              <span>Disable alerts</span>
+            <button mat-menu-item disabled>
+                <mat-icon>wifi_tethering</mat-icon>
+                <span>Podcasts</span>
+            </button>
+            <button mat-menu-item disabled>
+                <mat-icon>file_copy</mat-icon>
+                <span>Docs</span>
+            </button>
+            <button mat-menu-item routerLink="settings">
+              <mat-icon>settings</mat-icon>
+              <span>Settings</span>
             </button>
         </mat-menu>
     </div>

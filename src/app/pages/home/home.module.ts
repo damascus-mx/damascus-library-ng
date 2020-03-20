@@ -4,11 +4,19 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home.component';
 import { MatChipsModule, MatIconModule, MatSnackBarModule,
-  MatProgressBarModule, MatButtonModule, MatPaginatorModule } from '@angular/material';
+  MatProgressBarModule, MatButtonModule, MatPaginatorModule, MatCardModule } from '@angular/material';
+import { BookCardComponent } from 'src/app/shared/components/book-card/book-card.component';
+import { BookLogCardComponent } from 'src/app/shared/components/book-log-card/book-log-card.component';
+import { BookListComponent } from 'src/app/shared/components/book-list/book-list.component';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [
+    HomeComponent,
+    BookCardComponent,
+    BookLogCardComponent,
+    BookListComponent
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -17,8 +25,10 @@ import { MatChipsModule, MatIconModule, MatSnackBarModule,
     MatSnackBarModule,
     MatButtonModule,
     MatPaginatorModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatCardModule
   ],
-  providers: []
+  providers: [
+  ]
 })
 export class HomeModule { }

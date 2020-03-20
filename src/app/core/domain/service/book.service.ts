@@ -31,4 +31,20 @@ export class BookService {
       return books;
     }));
   }
+
+  getBookByID(id: string): Observable<Book> {
+    return this.http.get(`${REMOTE_CONFIG.API_URL}/book/${id}`).pipe(map((bookRemote: any) => {
+      const book: Book = {
+        ID: bookRemote.book_id,
+        name: bookRemote.name,
+        s3Url: bookRemote.s3_url,
+        authors: bookRemote.authors,
+        categories: bookRemote.categories,
+        publishedAt: bookRemote.published_at,
+        createdAt: bookRemote.created_at
+      };
+
+      return book;
+    }));
+  }
 }

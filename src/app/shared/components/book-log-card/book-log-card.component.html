@@ -1,0 +1,11 @@
+<div class="card mat-card card-spacer" (click)="onPressedCard(cachedBook.s3Url)">
+    <div class="container">
+        <div class="content">
+            <span class="title">{{cachedBook.bookName}}</span>
+            <strong><small class="read"> {{cachedBook.createdAt | date:'MMM d, y • h:mm a'}} </small></strong>
+        </div>
+        <div class="resource">
+            <div class="img-src" aria-label="Reading boy"></div>
+        </div>
+    </div>
+</div>
