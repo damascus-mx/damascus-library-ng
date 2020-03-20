@@ -9,7 +9,7 @@ $app-success: mat-palette($mat-green);
 $app-light-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 $app-dark-theme: mat-dark-theme($app-accent, $app-primary, $app-warn);
 
-// @include angular-material-theme($app-light-theme);
+@include angular-material-theme($app-light-theme);
 
 .app-light {
     @include angular-material-theme($app-light-theme);

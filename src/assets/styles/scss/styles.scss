@@ -64,18 +64,3 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 8px !important;
     box-shadow: none !important;
 }
-
-button.mat-menu-item {
-    line-height: 24px !important;
-}
-a.mat-menu-item > mat-icon {
-    margin-bottom: 14px;
-}
-.mat-icon svg {
-    height: 24px;
-    width: 24px;
-}
-.mat-step-icon-content .mat-icon svg {
-    height: 100%;
-    width: 100%;
-}

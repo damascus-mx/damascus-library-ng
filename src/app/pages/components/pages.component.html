@@ -16,23 +16,27 @@
         <span class="spacer-x"></span>
         <div class="action-list">
             <a class="item" mat-mini-fab color="accent" routerLink="/search" routerLinkActive="primary-overlay" style="margin: 0 24px;"><mat-icon>search</mat-icon></a>
-            <button class="item" mat-mini-fab color="accent" [matMenuTriggerFor]="menu" aria-label="Menu button">
+            <button class="item" mat-mini-fab color="accent" [matMenuTriggerFor]="menu" aria-label="Main menu">
                 <mat-icon>expand_more</mat-icon>
             </button>
         </div>
     </mat-toolbar>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>Redial</span>
+        <button mat-menu-item routerLink="book">
+            <mat-icon>menu_book</mat-icon>
+            <span>Books</span>
         </button>
         <button mat-menu-item disabled>
-            <mat-icon>voicemail</mat-icon>
-            <span>Check voice mail</span>
+            <mat-icon>wifi_tethering</mat-icon>
+            <span>Podcasts</span>
         </button>
-        <button mat-menu-item>
-            <mat-icon>notifications_off</mat-icon>
-            <span>Disable alerts</span>
+        <button mat-menu-item disabled>
+            <mat-icon>file_copy</mat-icon>
+            <span>Docs</span>
+        </button>
+        <button mat-menu-item routerLink="settings">
+          <mat-icon>settings</mat-icon>
+          <span>Settings</span>
         </button>
     </mat-menu>
     <div class="container mat-app-background mat-elevation-z8">
