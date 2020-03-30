@@ -20,6 +20,7 @@ $app-dark-theme: mat-dark-theme($app-accent, $app-primary, $app-warn);
 }
 
 $foreground: mat-color(map-get($app-light-theme, background), app-bar);
+$background: mat-color(map-get($app-light-theme, background), card);
 $primary: mat-color($app-primary);
 $accent: mat-color($app-accent);
 $warn: mat-color($app-warn);

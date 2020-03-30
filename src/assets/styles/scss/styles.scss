@@ -55,9 +55,13 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.mat-chip, .mat-button, .mat-flat-button, .mat-menu-item {
+.mat-chip, .mat-button, .mat-flat-button {
     font-family: 'Inter', sans-serif !important;
     font-weight: 600 !important;
+}
+
+.mat-menu-item {
+    font-family: 'Inter', sans-serif !important;
 }
 
 .mat-fab, .mat-mini-fab, .mat-chip {

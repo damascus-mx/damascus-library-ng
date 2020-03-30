@@ -1,28 +1,28 @@
-<div class="wrapper">
-    <div class="sidebar">
-        <div class="sidebar-container">
+<div class="wrapper flex flex-col sm:flex-col md:flex-col lg:flex-row">
+    <div class="sidebar hidden lg:flex lg:flex-col">
+        <div class="sidebar-container flex flex-col">
             <img routerLink="/" src="assets/img/branding/damascus_black.png" alt="damascus" height="56" width="56" style="cursor: pointer;">
-            <div class="action-list">
+            <div class="action-list flex flex-col">
                 <a class="item" mat-fab color="accent" routerLink="/" routerLinkActive="primary-overlay" [routerLinkActiveOptions]="{exact: true}"><mat-icon>dashboard</mat-icon></a>
                 <a class="item" mat-fab color="accent" routerLink="/search" routerLinkActive="primary-overlay"><mat-icon>search</mat-icon></a>
                 <a class="item" mat-fab color="accent" routerLink="/upload" routerLinkActive="primary-overlay"><mat-icon svgIcon="cloud-upload"></mat-icon></a>
-                <div class="spacer-y"></div>
-                <a class="item" mat-fab color="accent" routerLink="/settings" routerLinkActive="primary-overlay"><mat-icon>settings</mat-icon></a>
+                <div class="flex-grow"></div>
+                <a class="item" mat-fab color="accent" routerLink="/account" routerLinkActive="primary-overlay"><mat-icon>account_circle</mat-icon></a>
             </div>
         </div>
     </div>
-    <mat-toolbar class="navbar">
+    <div class="navbar flex flex-row px-8 pt-8 lg:hidden">
         <img routerLink="/" src="assets/img/branding/damascus_black.png" alt="damascus" height="48" width="48" style="cursor: pointer;">
-        <span class="spacer-x"></span>
+        <span class="flex-auto"></span>
         <div class="action-list">
             <a class="item" mat-mini-fab color="accent" routerLink="/search" routerLinkActive="primary-overlay" style="margin: 0 24px;"><mat-icon>search</mat-icon></a>
             <button class="item" mat-mini-fab color="accent" [matMenuTriggerFor]="menu" aria-label="Main menu">
                 <mat-icon>expand_more</mat-icon>
             </button>
         </div>
-    </mat-toolbar>
+    </div>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="book">
+        <button mat-menu-item routerLink="/book">
             <mat-icon>menu_book</mat-icon>
             <span>Books</span>
         </button>
@@ -34,12 +34,12 @@
             <mat-icon>file_copy</mat-icon>
             <span>Docs</span>
         </button>
-        <button mat-menu-item routerLink="settings">
-          <mat-icon>settings</mat-icon>
-          <span>Settings</span>
+        <button mat-menu-item routerLink="/settings">
+          <mat-icon>account_circle</mat-icon>
+          <span>Account</span>
         </button>
     </mat-menu>
-    <div class="container mat-app-background mat-elevation-z8">
+    <div class="d-container mt-8 flex-auto lg:mt-0 mat-app-background mat-elevation-z8">
         <router-outlet></router-outlet>
     </div>
 </div>

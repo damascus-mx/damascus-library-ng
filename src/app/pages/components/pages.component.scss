@@ -3,23 +3,18 @@
 .wrapper {
     width: 100%;
     height: 100vh;
-    display: flex;
+    /*display: flex;
     display: -moz-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
+    display: -ms-flexbox;*/
 
     margin: 0;
     padding: 0;
-    flex-flow: row wrap;
+    // flex-flow: row wrap;
     z-index: -1;
 
 
     .sidebar {
-        display: flex;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-
-        flex-flow: column;
         align-items: center;
 
         height: inherit;
@@ -28,20 +23,10 @@
 
         .sidebar-container {
             margin: 64px 64px 0;
-            display: flex;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            flex-flow: column;
             height: inherit;
-
-            justify-content: flex-start;
 
             .action-list{
                 margin-top: 64px;
-                display: flex;
-                display: -webkit-flex;
-                display: -ms-flexbox;
-                flex-flow: column;
 
                 height: 75%;
 
@@ -54,19 +39,20 @@
 
     .navbar {
         z-index: 1;
-        display: none;
+        // background-color: $foreground;
     }
 
-    .container {
+    .d-container {
         border-radius: 24px 0 0 24px;
-        flex: 1 1 auto;
+        // flex: 1 1 auto;
         height: 100vh;
         overflow: auto;
     }
 }
 
+/*
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
+    
     .wrapper {
         flex-flow: column;
 
@@ -87,18 +73,17 @@
             padding-top: 16px;
         }
 
-        .container {
+        .d-container {
             border-radius: 24px 24px 0 0;
-            margin-top: 40px;
-            height: max-content;
-            overflow: inherit;
         }
     }
 }
+*/
 
 @media only screen and (max-width: 1024px) {
-    /* For tablets phones: */
+    
     .wrapper {
+        /*
         flex-flow: column;
 
         .sidebar-container, .sidebar {
@@ -116,11 +101,10 @@
             width: inherit;
 
             padding-top: 16px;
-        }
+        }*/
 
-        .container {
+        .d-container {
             border-radius: 24px 24px 0 0;
-            margin-top: 40px;
         }
     }
 }
