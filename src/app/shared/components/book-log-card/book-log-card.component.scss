@@ -2,77 +2,27 @@
 @include mat-core();
 
 $grey: mat-color(mat-palette($mat-grey, A400));
-$skel: mat-color(mat-palette($mat-grey, 200));
 
 .card {
-    display: flex;
-    display: -webkit-flex;
+    background-color: $background;
 
-    flex-flow: column;
-    justify-content: center;
-    align-content: center;
-    cursor: pointer;
+    .title {
+        white-space: normal !important;
+    }
 
-    max-width: 300px;
-    max-height: 300px;
+    .read {
+        color: $grey;
+    }
 
-    .container {
-        display: flex;
-        display: -webkit-flex;
-        flex-flow: row;
-        justify-content: center;
-        align-items: center;
-        height: 150px;
+    .img-src {
+        height: 96px;
+        width: 96px;
 
-        .content {
-            display: flex;
-            display: -webkit-flex;
-            flex-flow: column;
-            max-width: 48%;
-            overflow: hidden;
-
-            .title {
-                font-weight: 700;
-                font-size: 21px;
-                font-family: 'Inter', serif;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .read {
-                font-size: 10px;
-                color: $grey;
-                font-family: 'Inter', sans-serif;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
-
-        .resource {
-            max-width: 48%;
-
-            .img-src {
-                height: 96px;
-                width: 96px;
-
-                background-image: url('src/assets/img/wiggle.svg');
-                background-position: center;
-            
-                background-color: $accent;
-                border-radius: 100%;
-            }
-        }
+        background-image: url('src/assets/img/wiggle.svg');
+        background-position: center;
+    
+        background-color: $accent;
+        border-radius: 100%;
     }
 }
 
-.mat-card {
-    border-radius: 8px;
-    box-shadow: none !important;
-}
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .card {
-        margin: 16px !important;
-    }
-}
