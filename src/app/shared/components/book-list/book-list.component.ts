@@ -17,6 +17,7 @@ export class BookListComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.books);
   }
 
   ngAfterViewInit(): void {

@@ -1,7 +1,7 @@
 <div class="book card-spacer animated fadeIn fast" (click)="openBookTab(book.s3Url, book.ID, book.name)">
-    <div class="cover">
+    <div class="cover" #cover>
         <div class="actions">
-            <button mat-mini-fab class="accent-overlay">
+            <button mat-mini-fab class="accent-overlay" #buttonURL>
                 <mat-icon>launch</mat-icon>
             </button>
         </div>
