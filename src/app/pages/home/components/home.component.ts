@@ -30,16 +30,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     // Get books
     this.books$ = this.bookService.getBooks();
-    this.bookService.getBooks().pipe(takeUntil(this.subject$)).subscribe((booksRemote: Array<Book>) => {
-      // this.books = booksRemote;
-    }, (err: Error) => {
-      this.isLoading = false;
-      this.gotError = true;
-    }, () => {
-      // Completed
-      this.gotError = false;
-      this.isLoading = false;
-    });
   }
 
   ngOnInit() {
