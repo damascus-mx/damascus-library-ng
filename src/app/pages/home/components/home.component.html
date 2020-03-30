@@ -1,7 +1,7 @@
 <div class="container flex flex-col items-center w-full h-full">
     <div class="flex flex-col items-center w-full animated fadeIn">
-        <div class="banner flex flex-col items-center justify-center w-11/12 bg-cover rounded-lg">
-            <div class="title flex flex-col items-baseline">
+        <div class="banner flex flex-col items-center justify-center w-11/12 bg-cover rounded-lg my-8">
+            <div class="flex flex-col items-baseline text-white">
                 <span class="text-base lg:text-lg" ><b>damascus</b> library</span>
                 <span class="text-lg sm:text-xl lg:text-3xl font-bold">Find books, podcast & more.</span>
             </div>
@@ -9,10 +9,10 @@
     </div>
 
     <!-- Your Lectures -->
-    <section class="section-container w-11/12" *ngIf="booksCached$ | async" >
-        <div class="headline">
-            <h2 class="truncate" style="margin: 0;">Continue were you left</h2>
-            <span class="spacer-x"></span>
+    <section class="flex flex-col w-11/12" *ngIf="booksCached$ | async" >
+        <div class="flex flex-row items-center">
+            <h2 class="truncate m-0 font-bold text-xl">Continue were you left</h2>
+            <span class="flex-grow"></span>
             <button mat-button color="warn" (click)="onDeleteLogs()">Delete</button>
         </div>
         <div class="book-container animated fadeIn fast">
@@ -23,10 +23,10 @@
     </section>
 
     <!-- Available Lectures -->
-    <section class="section-container w-11/12">
-        <div class="headline">
-            <h2 style="margin: 0;">Available lectures</h2>
-            <span class="spacer-x"></span>
+    <section class="flex flex-col w-11/12">
+        <div class="flex flex-row items-center">
+            <h2 class="truncate m-0 font-bold text-xl">Available lectures</h2>
+            <span class="flex-grow"></span>
             <button mat-button color="primary" routerLink="/book">More</button>
         </div>
         <app-book-list [books]="books$ | async"></app-book-list>

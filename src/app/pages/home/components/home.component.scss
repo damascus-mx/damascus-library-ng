@@ -9,55 +9,12 @@ $grey: mat-color(mat-palette($mat-grey, A400));
 
         background-color: $skel;
         height: 400px;
-        margin: 36px 0;
 
         background-image: linear-gradient(
             rgba(20,20,20, .3), 
             rgba(20,20,20, 0)),
             url('https://images.unsplash.com/photo-1576675049039-e0abcef5ce69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
         
-
-        span {
-            text-align: center;
-        }
-
-        img {
-            width: 250px;
-            height: auto;
-        }
-
-        .title {
-            color: #fff;
-            img {
-                height: 36px;
-                width: auto;
-            }
-        }
-    }
-    .section-container {
-
-        .headline {
-            width: 100%;
-            display: flex;
-            display: -webkit-flex;
-            justify-content: flex-start;
-            align-self: center;
-            overflow: hidden;
-
-            h2 {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-        }
-    
-        .loader-container {
-            width: 100%;
-            display: flex;
-            display: -webkit-flex;
-            justify-content: flex-start;
-            align-self: center;
-        }
     }
 }
 
