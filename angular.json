@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/damascus-library-ng",
             "index": "src/index.html",
@@ -29,10 +29,14 @@
             ],
             "styles": [
               "src/assets/styles/scss/library-theme.scss",
+              "src/assets/styles/scss/tailwind.scss",
               "./node_modules/swiper/css/swiper.min.css",
               "src/assets/styles/scss/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "extra-webpack.config.js"
+            }
           },
           "configurations": {
             "production": {
@@ -66,9 +70,12 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "damascus-library-ng:build"
+            "browserTarget": "damascus-library-ng:build",
+            "customWebpackConfig": {
+              "path": "extra-webpack.config.js"
+            }
           },
           "configurations": {
             "production": {
