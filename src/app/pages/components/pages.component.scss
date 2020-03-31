@@ -1,22 +1,21 @@
 @import 'src/assets/styles/scss/library-theme.scss';
 
-.wrapper {
-    width: 100%;
-    height: 100vh;
+$border-radius: 24px;
 
-    margin: 0;
-    padding: 0;
-    z-index: -1;
+.wrapper {
+    z-index: 1;
+    background-color: $foreground;
 
     .sidebar {
-        align-items: center;
-
+        z-index: 2;
         height: inherit;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
 
-        background-color: $foreground;
+        // background-color: inherit;
 
         .sidebar-container {
-            margin: 64px 64px 0;
+            // margin: 64px 64px 0;
             height: inherit;
 
             .action-list{
@@ -32,22 +31,14 @@
     }
 
     .navbar {
-        z-index: 1;
+        // background-color: inherit;
+        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+        z-index: 2;
     }
 
     .d-container {
-        border-radius: 24px 0 0 24px;
-        height: 100vh;
         overflow: auto;
-    }
-}
-
-
-@media only screen and (max-width: 1024px) {
-    
-    .wrapper {
-        .d-container {
-            border-radius: 24px 24px 0 0;
-        }
+        background-color: $foreground;
     }
 }
