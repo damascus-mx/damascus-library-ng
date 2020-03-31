@@ -6,8 +6,10 @@ $app-accent:  mat-palette($mat-grey, 300);
 $app-warn:    mat-palette($mat-red, A700, A100, A700);
 $app-success: mat-palette($mat-green);
 
+$app-accent-dark: mat-palette($mat-grey, 800);
+
 $app-light-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
-$app-dark-theme: mat-dark-theme($app-accent, $app-primary, $app-warn);
+$app-dark-theme: mat-dark-theme($app-primary, $app-accent-dark, $app-warn);
 
 @include angular-material-theme($app-light-theme);
 
